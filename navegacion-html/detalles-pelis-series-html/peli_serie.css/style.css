@@ -1,0 +1,227 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #141414; /* Color de fondo oscuro al estilo de Netflix */
+    color: #fff; /* Color de texto blanco */
+}
+
+header {
+    background-color: #141414; /* Color de fondo oscuro al estilo de Netflix */
+    color: #fff; /* Color de texto blanco */
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px; /* Tamaño del logo */
+    margin-left: 20px; /* Espacio izquierdo para el logo */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: 20px; /* Espacio derecho para el menú de navegación */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff; /* Color de texto blanco */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.group {
+    margin-bottom: 40px; 
+    display: flex; 
+    flex-wrap: nowrap; 
+    justify-content: center;
+    gap: 20px; 
+}
+
+h2 {
+    font-size: 24px; /* Tamaño del título del grupo */
+    display: flex;
+    justify-content: start;
+    margin-bottom: 10px;
+    margin-left: 40px;
+}
+
+.item {
+    width: 200px; 
+    text-align: center;
+    margin-top: 20px;
+}
+
+.item a {
+    text-decoration: none;
+    color: #fff; /* Color de texto blanco */
+}
+
+.item img {
+    width: 100%; /* Imágenes del mismo ancho para todas */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    margin-bottom: 10px;
+}
+
+.item h3 {
+    font-size: 15px; /* Tamaño del título de la película/serie */
+    margin-bottom: 5px;
+}
+
+.item p {
+    font-size: 14px;
+}
+
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+form input[type="text"] {
+    padding: 10px;
+    border: none;
+    background-color: #333; /* Color de fondo del campo de búsqueda */
+    color: #fff; /* Color de texto blanco */
+}
+
+form button {
+    background-color: #e50914; /* Color de fondo del botón de búsqueda al estilo de Netflix */
+    color: #fff; /* Color de texto blanco */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+main {
+    background-color: #141414; /* Color de fondo oscuro al estilo de Netflix */
+    color: #fff; /* Color de texto blanco */
+    padding: 20px;
+}
+
+
+footer {
+    background-color: #141414; /* Color de fondo oscuro al estilo de Netflix */
+    color: #fff; /* Color de texto blanco */
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+}
+
+.footer-content ul li {
+    margin-right: 20px;
+    margin-bottom: 10px; /* Espacio inferior entre elementos */
+}
+
+.footer-content a {
+    text-decoration: none;
+    color: #fff; /* Color de texto blanco */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.team-names {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.team-names p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.team-names ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.team-names ul li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: #e50914; 
+    color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@media screen and (max-width:823px){
+    header{
+
+        flex-direction: column;
+        justify-content: center;
+    }
+    nav ul{
+        margin-right: 0px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    
+}
+
+@media screen and (max-width:560px){
+    header{
+        justify-content: center;  
+        flex-direction: column;
+         
+    }
+    nav ul{
+        margin-right: 0px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+    .logo img{
+        margin-left: 0px;
+        width: 220px;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:500px){
+    main{
+        
+        margin-right: 0px;
+
+    }
+    header{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .logo img{
+        margin-left: 0px;
+        width: 220px;
+    }
+    nav ul{
+        margin-right: 0px;
+        margin-bottom: 50px;
+    }
+}
+
