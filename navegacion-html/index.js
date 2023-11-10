@@ -19,37 +19,37 @@ let formDelBoton = document.querySelector(".formulario");
 
 formDelBoton.addEventListener("submit", function (event) {
   console.log("hizo ENTER en el boton");
-});
+}); 
+
 
 /* MOVIES API */
-
 let grupo = document.querySelector(".group");
 fetch(
   `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`
 )
   .then(function (resp) {
     return resp.json();
-    console.log(resp.json)
   })
 
   .then(function (data) {
+    console.log(data)
     grupo.innerHTML = ``;
   
     for (let i = 0; i < 5; i++) {
       grupo.innerHTML += ` 
         <section class="group"> 
           <div class="item">
-            <a href="../detalles-pelis-series-html/detail-movie.html">
+            <a href="./detalles-pelis-series-html/detail-movie.html?id=${data.results[i].id}">
               <h3>${data.results[i].title}</h3>
               <img class="pelispopus" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="${data.results[i].title}" />
-              <p>Fecha de Estreno: ${data.results[i].id}</p>
+              <p>Fecha de Estreno: ${data.results[i].release_date}</p>
             </a>
           </div>
         </section>
       `;
-    } /* PREGUNTAR POR QUE CUANDO HAGO CLCIK EN LAS IMAGENES LINKEADAS CON <a></a> ME DA ERROR???? */
+    } 
   
-    console.log(data);
+  ;
   })
   .catch(function (err) {
     console.log(err);
@@ -64,27 +64,27 @@ fetch(
 )
   .then(function (resp) {
     return resp.json();
-    console.log(resp.json)
+
   })
 
   .then(function (data) {
     grupo2.innerHTML = ``;
-  
+    console.log(data)
     for (let i = 0; i < 5; i++) {
       grupo2.innerHTML += ` 
         <section class="group2"> 
           <div class="item">
-            <a href="../detalles-pelis-series-html/detail-movie.html">
+            <a href="./detalles-pelis-series-html/detail-serie.html?id=${data.results[i].id}">
               <h3>${data.results[i].original_name}</h3>
               <img class="pelispopus" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="${data.results[i].title}" />
-              <p>Fecha de Estreno: ${data.results[i].id}</p>
+              <p>Fecha de Estreno: ${data.results[i].first_air_date}</p>
             </a>
           </div>
         </section>
       `;
-    } /* PREGUNTAR POR QUE CUANDO HAGO CLCIK EN LAS IMAGENES LINKEADAS CON <a></a> ME DA ERROR???? y NO HAY FECHA DE ESTRENO EN NINGUN LUGAR*/  /* Y PREGUNTAR COOMO HACER CON EL LINK DE API DE PELIS VALORADAS POR LO DEL GUEST_SESSION_ID */
+    } /* Y PREGUNTAR COOMO HACER CON EL LINK DE API DE PELIS VALORADAS POR LO DEL GUEST_SESSION_ID */ /* Tambien preguntar  */
   
-    console.log(data);
+;
   })
   .catch(function (err) {
     console.log(err);
@@ -94,27 +94,24 @@ fetch(
   /* PELIS MAS VALORADAS API */
   let grupo3 = document.querySelector(".group3");
   fetch(
-    `https://api.themoviedb.org/3/guest_session/{guest_session_id}/rated/movies?api_key=${apiKey}`
+    `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`
   )
     .then(function (resp) {
-      let idSesion= data.results[i].genre_ids
       return resp.json();
-    
-
-      console.log(resp.json)
-    })
+        })
   
     .then(function (data) {
       grupo3.innerHTML = ``;
+      console.log(data)
     
       for (let i = 0; i < 5; i++) {
         grupo3.innerHTML += ` 
           <section class="group2"> 
             <div class="item">
-              <a href="../detalles-pelis-series-html/detail-movie.html">
-                <h3>${data.results[i].original_name}</h3>
-                <img class="pelispopus" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="${data.results[i].title}" />
-                <p>Fecha de Estreno: ${data.results[i].id}</p>
+              <a href="./detalles-pelis-series-html/detail-movie.html?id=${data.results[i].id}">
+                <h3>${data.results[i].original_title}</h3>
+                <img class="pelispopus" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="${data.results[i].original_title}" />
+                <p>Fecha de Estreno: ${data.results[i].release_date}</p>
               </a>
             </div>
           </section>
