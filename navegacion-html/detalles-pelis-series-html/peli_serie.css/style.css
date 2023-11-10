@@ -46,6 +46,17 @@ nav a {
     gap: 20px; 
 }
 
+.group-rec{
+    margin-bottom: 40px; 
+    display: flex; 
+    flex-wrap: nowrap; 
+    justify-content: center;
+    gap: 10px; 
+}
+.rec-none{
+    display: none;
+}
+
 h2 {
     font-size: 24px; /* Tamaño del título del grupo */
     display: flex;

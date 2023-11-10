@@ -40,3 +40,39 @@ fetch(`https://api.themoviedb.org/3/tv/${IdBuscada}?api_key=${apiKey}`)
   .catch(function (error) {
     console.log(error);
   });
+
+  
+
+/* Boton recomendaciones */
+let recomendaciones = document.querySelector(".recomendaciones")
+let grupoRec = document.querySelector(".group-rec")
+
+recomendaciones.addEventListener("click", function (event) {
+    let recNone = document.querySelector(".rec-none")
+    recNone.style.display="flex"
+})
+
+fetch(`https://api.themoviedb.org/3/tv/${IdBuscada}/recommendations?api_key=${apiKey}`)
+
+    .then(function (resp) {
+        return resp.json();
+      })
+    
+      .then(function (data) {
+        console.log(data)   
+        
+    for (let i = 0; i < 5; i++) {
+        grupoRec.innerHTML += ` 
+          <section class="group"> 
+            <div class="item">
+              <a href="./detalles-pelis-series-html/detail-movie.html?id=${data.results[i].id}">
+                <h3>${data.results[i].title}</h3>
+                <img class="pelispopus" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="${data.results[i].title}" />
+                <p>Fecha de Estreno: ${data.results[i].release_date}</p>
+              </a>
+            </div>
+          </section>
+        `;
+      } 
+    console.log("hizo ENTER en el boton");
+  })
