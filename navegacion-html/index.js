@@ -10,6 +10,7 @@ fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`)
     console.log(error);
   });
 
+  
 let boton = document.querySelector(".boton");
 boton.addEventListener("click", function () {
   console.log("hizo click en el boton");

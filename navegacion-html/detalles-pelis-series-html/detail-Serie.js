@@ -66,9 +66,9 @@ fetch(`https://api.themoviedb.org/3/tv/${IdBuscada}/recommendations?api_key=${ap
           <section class="group"> 
             <div class="item">
               <a href="./detalles-pelis-series-html/detail-movie.html?id=${data.results[i].id}">
-                <h3>${data.results[i].title}</h3>
+                <h3>${data.results[i].original_name}</h3>
                 <img class="pelispopus" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}" alt="${data.results[i].title}" />
-                <p>Fecha de Estreno: ${data.results[i].release_date}</p>
+                <p>Fecha de Estreno: ${data.results[i].first_air_date}</p>
               </a>
             </div>
           </section>

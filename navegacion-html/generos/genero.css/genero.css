@@ -75,6 +75,14 @@ main {
     gap: 5px; 
 }
 
+.group2 {
+    margin-bottom: 40px; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 5px; 
+}
+
 h2 {
     font-size: 24px; 
     display: flex;
